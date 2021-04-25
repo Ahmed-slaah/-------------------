@@ -1,0 +1,451 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'cairo-bold';
+    outline: none;
+}
+::-webkit-scrolled{
+    width: 0;
+}
+/*start globla style*/
+body{
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+ul,li{
+    list-style: none;
+}
+.container{
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+
+}
+section{
+    padding: 70px 0;
+}
+section h3{
+    text-align: center;
+    color: #43a047;
+    position: relative;
+    font-size: 30px;
+    margin-bottom: 50pxs;
+}
+section h3::after,
+section h3::before
+{
+    content: "";
+    position: absolute;
+    background-color: #43a047;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section h3::after{
+    width: 50px;
+    bottom:-13px;
+}
+section h3::before{
+    width: 100px;
+    bottom:-5px;
+}
+*::selection {
+    background: #43a047;
+    color: #fff;
+  }
+/*end globla style*/
+
+
+/*start header*/
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    transition: .5s all ease-in-out;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: #fff;
+    transition: .5s all ease-in-out;
+}
+.header.active{ /*style on scroll*/
+    background-color: rgb(0, 0, 0);
+}
+.header.active .container{
+    height: 85px;
+}
+.header ul{
+    display: flex;
+}
+.header ul li{
+    position: relative;
+    cursor: pointer;
+} 
+.header ul li::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    height: 2px;
+    transition: .3s all ease-in-out;
+    width: 0;
+}
+.header ul li:hover::after ,
+.header ul li:active::after{
+    width: 100%;
+}
+.header li:not(:first-of-type),
+.header li:not(:last-of-type){
+   margin:0 15px;
+}
+.header .logo{
+    font-family: 'thuluth-decorated';
+    font-size: 3rem;
+    cursor: pointer;
+}
+/*end header*/
+
+/*start main section*/
+.main{
+    background: url(../images/1.jpg)center center/cover no-repeat;
+    padding: 0;
+}
+.main .container{
+    min-height: 100vh;
+}
+.main .title{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50px);
+    color: #fff;
+    
+}
+.main .title h2{
+    line-height: 1.9;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+.main .title .btn{
+    border: 2px solid #fff;
+    background: transparent;
+    position: absolute;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.main .title .btn i{
+    align-items: center;
+    margin-right: 5px;
+}
+.title .btn::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    transition: .5s all ease-in-out;
+    z-index: -1;
+}
+.main .title .btn:hover{
+    color: #232323;
+}
+.title .btn:hover::after{
+    width: 100%;
+}
+/*end main section*/
+/*start hadith section*/
+.hadith .container {
+    margin-top: 70px;
+}
+.hadithcontainer{
+    min-height: 150px;
+    position: relative;
+    box-shadow:4px 4px 4px 0 #d1d9e6 inset ,
+               -4px -4px 4px 0 #d1d9e6 inset ;
+    color: #232323;
+    display: flex;
+    line-height: 1.5;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    padding-top: 70px;
+    
+}
+.hadithcontainer h2{
+    font-size: 18px;
+    font-weight: 400px;
+    line-height: 2;
+    color: #232323;
+    word-spacing: 4px;
+}
+.hadith .buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.hadith .buttons div{
+    background:linear-gradient(60deg,#66bb6a,#43a047) ;
+    padding: 10px 20px;
+    color: #fff;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(76 175 88 / 40%);
+    cursor: pointer;    
+}
+.hadith .buttons .number{
+    background: #fff;
+    color: #43a047;
+    cursor: text;
+}
+
+/*end main section*/
+
+/*start lectures section*/
+.lecture-container{
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    margin-top: 70px;
+
+}
+.lecture-container .right,
+.lecture-container .left
+{
+    width: 48%;
+}
+.lecture-container .right .lec{
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+    padding: 15px;
+    margin-bottom: 25px;
+    align-items:center;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+}
+
+.lecture-container .right .lec:hover{
+    transform: scale(.95);
+    background-color: #43a047;
+    color:#fff;
+}
+ .lec img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: auto;
+}
+.lec .lec-text h4{
+    font-weight: 700;
+    font-size: 19px;
+    color: #232323;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.lec .lec-text p{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #232323;
+    line-height: 1.5;
+}
+.left{
+    position: -webkit-sticky;
+    position: sticky !important;
+    top:0;
+}
+.lecture-container .left iframe{
+    width: 100%;
+    height: 60%;
+}
+.lecture-container .left p{
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+}
+/*end lectures section*/
+
+/*start surah section*/
+
+.surahscontainer {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.surahscontainer .surah{
+    min-width: 120px;
+    padding: 20px;
+    margin: 8px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+    text-align: center;
+    line-height: 2;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+    flex-direction: column;
+}
+.surahscontainer .surah:hover{
+    transform: scale(1.1);
+    background-color: #43a047;
+    color:#fff;
+}
+.surahscontainer .surah p{
+    font-size: 17px;
+    font-weight: 400;
+}
+/*end surah container*/
+/*start ayat pop-up*/
+.surah-popup{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ede6d4;
+    z-index: 2;
+    overflow-y: scroll;
+    transform: translateX(100%);
+
+}
+.surah-popup.active{
+    transform: translateX(0);
+    transition: .7s transform ease-in-out;
+}
+.ayat{
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    margin: 5%;
+}
+.ayat p{
+    margin-left: 10px;
+    line-height: 3;
+    font-size: 20px;
+    font-weight: 100;
+}
+.ayat p span{
+    color: #43a047;
+}
+.surah-popup .popup-footer{
+    text-align: center;
+    height: 50px;
+}
+.popup-footer p{
+    background-color: #43a047;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+.surah-popup .close{
+    position: sticky;
+    top: 5px;
+    right: 5px;
+}
+.surah-popup .close i{
+    margin-top: 15px;
+    margin-right: 25px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.surah-popup::-webkit-scrollbar{
+    width: 10px;
+    background-color: #fff;
+}
+.surah-popup::-webkit-scrollbar-thumb{
+    background-color: #43a047;
+}
+/*end popup*/
+/*start pray time*/
+.pray{
+    padding-bottom: 0;
+}
+.pray .container{
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.pray  .time-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pray .card{
+    width: 250px;
+    min-height: 320px;
+    padding: 30px 20px;
+    margin: 20px 20px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+}
+.card .circle{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle svg{
+    width: 210px;
+    height: 210px;
+}
+.circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke :#43a047;
+    transform: translate(5px,5px);
+    stroke-dasharray: 2;
+    stroke-dashoffset: 1000;
+    animation: dash 2s linear infinite;
+}
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .card .pray-time{
+    color:#43a047;
+    position: absolute;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  .card .pray-name {
+    color: #43a047;
+    position: relative;
+    font-weight: 700;
+    font-size: 35px;
+    
+    top: 40px;
+    text-align: center;}
+/*end pray time*/
+.footer{
+    padding: 0;
+    
+}.footer svg{
+    transform: translateY(3.5px);
+}
+.social{
+    display: flex;
+    justify-content: center;
+    background-color: #43a047;
+}
+.social i{
+    margin-right: 50px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #fff;
+}
